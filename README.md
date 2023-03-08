@@ -1,3 +1,3 @@
 # TIL
-:thinking:
-:
+:thinking: thinking
+:exploding_head: exploding_head
