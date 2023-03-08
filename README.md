@@ -1,2 +1,3 @@
 # TIL
-:thinking_face:
+:thinking:
+:
