@@ -129,8 +129,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DataStructureAlgorithm.cpp" />
+    <ClCompile Include="DoublyLinkedList.cpp" />
     <ClCompile Include="DynamicArray.cpp" />
     <ClCompile Include="DynamicArray2.cpp" />
+    <ClCompile Include="StackLinkedList.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
