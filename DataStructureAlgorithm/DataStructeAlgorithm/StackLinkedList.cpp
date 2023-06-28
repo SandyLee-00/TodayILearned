@@ -1,11 +1,12 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Node
 {
 public:
-	int data_;
-	Node* next_;
+	char data_ = 0;
+	Node* next_ = nullptr;
 };
 class Stack
 {
@@ -31,7 +32,7 @@ public:
 		cout << endl;
 	}
 
-	void push(int data)
+	void push(char data)
 	{
 		Node* newNode = new Node();
 		newNode->data_ = data;
@@ -45,6 +46,7 @@ public:
 		}
 		top_ = newNode;
 	}
+
 	void pop()
 	{
 		Node* tmpNode;
@@ -53,36 +55,60 @@ public:
 			cout << "Stack underflow" << endl;
 			return;
 		}
-		int data = top_->data_;
+		char data = top_->data_;
 		tmpNode = top_;
 		top_ = top_->next_;
 		delete tmpNode;
 	}
 
-	int peek()
+	char peek()
 	{
 		if (top_ == NULL)
 		{
 			cout << endl << "Stack underflow";
 			return -1;
 		}
-		return top_->data_;
+		return (char)top_->data_;
 	}
+
 	void display()
 	{
 		Node* tmpNode = top_;
 		if (top_ == NULL)
 		{
 			cout << endl << "Stack underflow";
+			return;
 		}
-		else
+		while (tmpNode != NULL)
 		{
-			while (tmpNode != NULL)
-			{
-				cout << tmpNode->data_ << "  ";
-				tmpNode = tmpNode->next_;
-			}
+			cout << tmpNode->data_;
+			tmpNode = tmpNode->next_;
 		}
+
 		cout << endl;
+	}
+
+	void pushFirstString(string str)
+	{
+		for (int i = 0; i < str.length(); i++)
+		{
+			push(str[i]);
+		}
+	}
+
+	string isSameString(string str)
+	{
+		Node* tmpNode = top_;
+		for (int i = str.length()-1; i >= 0; i--)
+		{
+			cout << str[i] << " " << tmpNode->data_ << endl;
+
+			if (str[i] != tmpNode->data_)
+			{
+				return "Not same";
+			}
+			tmpNode = tmpNode->next_;
+		}
+		return "Same";
 	}
 };
